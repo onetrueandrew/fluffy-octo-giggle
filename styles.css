@@ -1,0 +1,220 @@
+/* ===== Base Reset & Typography ===== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background: #020617;
+    color: #e5f6ff;
+}
+
+/* ===== Animated Background ===== */
+
+.background {
+    position: fixed;
+    inset: 0;
+    background: url("wave-bg.svg") center / cover no-repeat;
+    will-change: transform;
+    transform-origin: center;
+    z-index: -1;
+}
+
+/* ===== Main Card ===== */
+
+.card {
+    max-width: 420px;
+    margin: auto;
+    margin-top: 12vh;
+    padding: 2.5rem;
+    border-radius: 22px;
+
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 30px 60px rgba(2, 6, 23, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    text-align: center;
+}
+
+/* ===== Headings & Text ===== */
+
+h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    color: #e5f6ff;
+    letter-spacing: -0.02em;
+}
+
+h1 span {
+    color: #67e8f9;
+}
+
+.subtitle {
+    color: #c7d2fe;
+    margin-bottom: 2rem;
+    line-height: 1.55;
+}
+
+/* ===== Referral Code Box ===== */
+
+.referral-box {
+    margin-bottom: 1.8rem;
+}
+
+.referral-box span {
+    display: block;
+    font-size: 0.85rem;
+    color: #a5b4fc;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.4rem;
+}
+
+.code {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    padding: 0.7rem 1.2rem;
+    border-radius: 14px;
+
+    color: #ecfeff;
+    background: linear-gradient(
+        135deg,
+        rgba(34, 211, 238, 0.25),
+        rgba(45, 212, 191, 0.25)
+    );
+
+    border: 1px solid rgba(165, 243, 252, 0.35);
+    cursor: pointer;
+    user-select: none;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+.code:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(103, 232, 249, 0.35);
+}
+
+.code:active {
+    transform: scale(0.98);
+}
+
+/* Copied state */
+.code.copied {
+    background: linear-gradient(
+        135deg,
+        rgba(56, 189, 248, 0.45),
+        rgba(34, 211, 238, 0.45)
+    );
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.4);
+}
+
+/* ===== CTA Button ===== */
+
+.cta {
+    display: inline-block;
+    margin-top: 1.2rem;
+    padding: 0.95rem 1.8rem;
+
+    background: linear-gradient(135deg, #38bdf8, #22d3ee);
+    color: #022c22;
+    font-weight: 700;
+    font-size: 0.95rem;
+
+    border-radius: 999px;
+    text-decoration: none;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(56, 189, 248, 0.45);
+}
+
+.cta:active {
+    transform: scale(0.97);
+}
+
+/* ===== Small Hint Text ===== */
+
+.hint {
+    margin-top: 1.4rem;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 480px) {
+    .card {
+        margin-top: 8vh;
+        padding: 2rem 1.6rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .code {
+        font-size: 1.6rem;
+    }
+}
+
+/* ===== Confirmation Badge ===== */
+
+.confirmation {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    margin-bottom: 1.4rem;
+    padding: 0.4rem 0.75rem;
+
+    border-radius: 999px;
+    background: rgba(34, 197, 94, 0.12);
+    border: 1px solid rgba(34, 197, 94, 0.35);
+
+    font-size: 0.85rem;
+    color: #bbf7d0;
+}
+/* last working as of */
+
+.confirmation .check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 1.2rem;
+    height: 1.2rem;
+
+    border-radius: 50%;
+    background: rgba(34, 197, 94, 0.9);
+    color: #052e16;
+    font-weight: 900;
+    font-size: 0.75rem;
+}
+
+.confirmation strong {
+    color: #dcfce7;
+}
