@@ -57,25 +57,21 @@ if (codeEl) {
 // last working
 // ===== Confirmation timestamp (12–24 hours ago) =====
 
-const confirmEl = document.getElementById("confirmTime");
-
-if (confirmEl) {
-    const now = new Date();
-
-    // Random hours between 12 and 24
-    const hoursAgo = 12 + Math.random() * 12;
-
-    const confirmedDate = new Date(
-        now.getTime() - hoursAgo * 60 * 60 * 1000
-    );
-
-    const options = {
-        month: "short",
-        day: "numeric",
-        hour: "numeric",
-        minute: "2-digit",
-        hour12: true
-    };
-
-    confirmEl.textContent = confirmedDate.toLocaleString(undefined, options);
-}
+document.addEventListener('DOMContentLoaded', function () {
+    const confirmEl = document.getElementById("confirmTime");
+    if (confirmEl) {
+        const now = new Date();
+        const hoursAgo = 12 + Math.random() * 12;
+        const confirmedDate = new Date(
+            now.getTime() - hoursAgo * 60 * 60 * 1000
+        );
+        const options = {
+            month: "short",
+            day: "numeric",
+            hour: "numeric",
+            minute: "2-digit",
+            hour12: true
+        };
+        confirmEl.textContent = confirmedDate.toLocaleString(undefined, options);
+    }
+});
